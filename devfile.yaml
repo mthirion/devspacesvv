@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: http://quay.io/devfile/universal-developer-image:ubi8-latest
+      image: https://quay.io/repository/devfile/base-developer-image:ubi8-latest
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
