@@ -1,11 +1,6 @@
 {
   "recommendations": [
     "redhat.java",
-    "redhat.apache-camel-extension-pack",
-    "redhat.vscode-apache-camel",
-    "redhat.vscode-debug-adapter-apache-camel",
-    "redhat.vscode-camelk",
-    "redhat.vscode-kaoto",
-    "vscjava.vscode-java-pack"
+    "redhat.apache-camel-extension-pack"
   ]
 }
