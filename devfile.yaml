@@ -5,19 +5,6 @@ components:
   - name: tools
     container:
       image: quay.io/jnyilimbibi/devspaces-extended-udi:3.12
-      env:
-        - name: QUARKUS_HTTP_HOST
-          value: 0.0.0.0
-      endpoints:
-        - exposure: none
-          name: debug
-          protocol: tcp
-          targetPort: 5005
-        - exposure: public
-          name: hello-greeting
-          protocol: https
-          targetPort: 8080
-          path: /hello/greeting/devspaces-user
       volumeMounts:
         - name: m2
           path: /home/user/.m2
@@ -34,17 +21,17 @@ commands:
     exec:
       label: "1. Package the application"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/quarkus-quickstarts/getting-started
+      workingDir: ${PROJECTS_ROOT}/devspacesvv
       commandLine: "mvn package"
       group:
         kind: build
         isDefault: true
-  - id: 2-startdev
+  - id: 2-jbang
     exec:
-      label: "2. Start Development mode (Hot reload + debug)"
+      label: "2. Start Jbang"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/quarkus-quickstarts/getting-started
-      commandLine: "mvn compile quarkus:dev"
+      workingDir: ${PROJECTS_ROOT}/devspacesvv
+      commandLine: "jbang test.camel.yaml"
       group:
         kind: run
         isDefault: true
