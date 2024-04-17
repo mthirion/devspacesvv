@@ -12,17 +12,11 @@ components:
           value: admin123
         - name: MAVEN_URL
           value: http://localhost:8080/repository
-      volumeMounts:
-        - name: m2
-          path: /home/user/.m2
       cpuLimit: '2'
       cpuRequest: '0.5'
       memoryLimit: '4G'
       memoryRequest: '2G'
       mountSources: true
-  - name: m2
-    volume:
-      size: 1G
 commands:
   - id: 1-jbang
     exec:
