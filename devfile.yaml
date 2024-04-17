@@ -4,7 +4,14 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/jnyilimbibi/devspaces-extended-udi:3.12
+      image: quay.io/jnyilimbibi/devspaces-extended-udi:3.12c
+      env:
+        - name: MAVEN_USER
+          value: admin
+        - name: MAVEN_PASSWORD
+          value: admin123
+        - name: MAVEN_URL
+          value: http://localhost:8080/repository
       volumeMounts:
         - name: m2
           path: /home/user/.m2
