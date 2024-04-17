@@ -1,7 +1,5 @@
 {
   "recommendations": [
-    "redhat.java",
-    "redhat.apache-camel-extension-pack",
-    "redhat.vscode-apache-camel"
+    "redhat.apache-camel-extension-pack"
   ]
 }
