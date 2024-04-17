@@ -17,18 +17,9 @@ components:
     volume:
       size: 1G
 commands:
-  - id: 1-package
+  - id: 1-jbang
     exec:
-      label: "1. Package the application"
-      component: tools
-      workingDir: ${PROJECTS_ROOT}/devspacesvv
-      commandLine: "mvn package"
-      group:
-        kind: build
-        isDefault: true
-  - id: 2-jbang
-    exec:
-      label: "2. Start Jbang"
+      label: "1. Start Jbang"
       component: tools
       workingDir: ${PROJECTS_ROOT}/devspacesvv
       commandLine: "jbang test.camel.yaml"
