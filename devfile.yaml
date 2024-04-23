@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/jnyilimbibi/devspaces-extended-udi:3.12c
+      image: quay.io/jnyilimbibi/devspaces-extended-udi:3.12f
       env:
         - name: MAVEN_USER
           value: admin
@@ -18,6 +18,15 @@ components:
       memoryRequest: '2G'
       mountSources: true
 commands:
+  - id: jbang-trust-apache
+    exec:
+      label: "JBang - Trust Apache organization"
+      component: tools
+      workingDir: ${PROJECT_ROOT}
+      commandLine: "/home/user/.jbang/bin/jbang trust add -o --fresh --quiet https://github.com/apache"
+      group:
+        kind: build
+        isDefault: true
   - id: 1-jbang
     exec:
       label: "1. Start Jbang"
@@ -27,4 +36,6 @@ commands:
       group:
         kind: run
         isDefault: true
-
+events:
+  postStart:
+    - jbang-trust-apache
