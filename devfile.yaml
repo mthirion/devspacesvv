@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/jnyilimbibi/devspaces-extended-udi:3.12f
+      image: quay.io/jnyilimbibi/devspaces-extended-udi:3.12g
       env:
         - name: MAVEN_USER
           value: admin
