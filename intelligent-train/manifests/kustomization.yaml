@@ -1,5 +1,0 @@
-namespace: intelligent-train
-resources:
-- namespace.yaml
-- runtimeclass.yaml
-- deployment.yaml
